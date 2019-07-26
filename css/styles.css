@@ -1,0 +1,12 @@
+#topC, .jumboT {
+    padding-top: .75em;
+    margin-top: .75em;
+}
+
+.navd {
+    padding-bottom: .75em;
+}
+
+footer p {
+    float: right;
+}
