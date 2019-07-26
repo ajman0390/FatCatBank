@@ -9,7 +9,6 @@ var termPay;
 
 window.onload = function()
 {
-  document.getElementById("apr").focus();
   document.getElementById("calcBtn").onclick = getValues;
 };
 

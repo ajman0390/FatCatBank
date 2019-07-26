@@ -12,10 +12,9 @@
 
   <!-- Added CSS file-->
   <link rel="stylesheet" href="css/styles.css">
-  <link rel="stylesheet" href="css/mortgage.css">
 
-  <!-- Google fonts stylesheet -->
-  <link href="https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap" rel="stylesheet">
+  <!-- Google fonts stylesheet THIS FAILS THE VALIDATOR as Google fonts inputs a pipe for multiple fonts -->
+  <link href="https://fonts.googleapis.com/css?family=PT+Serif|Playfair+Display&display=swap" rel="stylesheet">
 
   <link rel="icon" href="img/fatcat-icon.png" />
   <title>FatCatBank</title>
@@ -32,17 +31,17 @@
 
     <div class="collapse navbar-collapse" id="navbarsDefault">
       <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-                    <a class="nav-link" href="mortgage.html">Mortgage</a>
-                  </li>
-          
-                  <li class="nav-item">
-                    <a class="nav-link" href="compound.html">Compound</a>
-                  </li>
-          
-                  <li class="nav-item">
-                    <a class="nav-link" href="annuity.html">Annuity</a>
-                  </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="mortgage.html">Mortgage</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="compound.html">Compound</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="annuity.html">Annuity</a>
+        </li>
 
       </ul>
     </div>
@@ -51,152 +50,96 @@
 
   <!-- Main jumbotron -->
   <header>
-    
-    <div class="container">
-        <div class="blog-header py-3">
-            <br/>
-        </div>
 
-    <div class="jumbotron p-4 p-md-5 text-white rounded bg-dark jumboT">
-      <div class="col-md-6 px-0">
-        <h1 class="display-4 font-italic">FatCatBank</h1>
-        <h1 class="display-5 font-weight-bold">Mortgage Calculator</h1>
-        <p class="lead my-3">Financial planning mortgage calculator to determine witch FatCatBank product best suits your needs.</p>
-        <p class="lead mb-0"><a href="#" class="text-white font-weight-bold">Continue reading...</a></p>
+    <div class="container">
+      <div class="blog-header py-3">
+        <br />
+      </div>
+
+      <div class="jumbotron p-4 p-md-5 text-white rounded bg-dark jumboT">
+        <div class="text-center">
+          <h1 class="display-4 font-italic">FatCatBank</h1>
+          <h2 class="display-5 font-weight-bold">Mortgage Calculator</h2>
+          <p class="lead my-3 pTop">Financial planning mortgage calculator to determine which FatCatBank product best suits
+            your needs.</p>
+        </div>
       </div>
     </div>
 
   </header>
 
+  <main class="container d-flex justify-content-center">
 
+    <div class="row">
+      <form class="form-horizontal well" id="mortgage-calculator" method="GET">
+        <h3>Mortgage Calculator</h3>
+        <div class="col-xs-12 text-center">
+          <p>Enter the <i>house price</i>, <i>interest rate</i>, and <i>length of the loan</i> to see how much your
+            monthly mortgage payment will be:</p>
+        </div>
+        <div class="form-group row">
+          <div id="house-price-group" class="col-md-6 col-sm-4 input-spacer requisite">
+            <label class="control-label">House Price</label>
+            <div class="input-group-prepend">
+              <div class="input-group-text">$</div>
+              <input type="number" class="form-control" placeholder="Amount" tabindex="1" id="amt" name="amt" />
+            </div>
+            <small id="homeHelp" class="form-text text-muted">Enter the home price without commas.</small>
+          </div>
 
-  <main class="container">
+          <div id="interest-rate-group" class="col-xs-6 col-sm-4 input-spacer requisite">
+            <label class="control-label">Interest Rate</label>
+            <div class="input-group">
+              <input type="number" class="form-control" id="apr" name="APR" tabindex="2" step="0.001"
+                placeholder="Interest Rate">
+              <div class="input-group-text">%</div>
+            </div>
+          </div>
+        </div>
 
-    <body class="container-fluid">
-            <div class="row">
-              <form class="form-horizontal well" id="mortgage-calculator" method="GET">
-                    <h2>Mortgage Calculator</h2>
-                <div class="col-xs-12 text-center">
-                  <p>Enter the <i>house price</i>, <i>interest rate</i>, <i>length of the loan</i>, <i>your down payment</i>, <i>insurance</i> and <i>taxes</i> to see how much your monthly mortgage payment will be:</p>
-                </div>
-                <div class="form-group row">
-                  <div id="house-price-group" class="col-xs-6 col-sm-4 input-spacer requisite">
-                    <label class="control-label">House Price</label>
-                    <div class="input-group-prepend">
-                      <div class="input-group-text">$</div>
-                      <input type="number" class="form-control" placeholder="Amount" tabindex="1" id="amt" name="amt"/>
-                    </div>
-                  </div>
+        <div class="form-group row">
+          <div id="loan-term-group" class="col-md-6 col-sm-4 input-spacer requisite">
+            <label class="control-label">Loan Term</label>
+            <div class="input-group-prepend">
+              <div class="input-group-text">Years</div>
+              <input type="number" class="form-control" placeholder="Term in Years" tabindex="1" id="trm" name="APR" />
+            </div>
+          </div>
+        </div>
 
-                  
+        <div class="text-center">
+          <button type="button" class="btn btn-outline-primary btn-lg" name="calculate" id="calcBtn">Calculate</button>
+          <button type="reset" class="btn btn-outline-danger btn-lg">Reset</button>
+        </div>
 
+        <div class="form-group row">
+          <div id="monthly-payment-group" class="col-md-6 col-sm-4 input-spacer requisite">
+            <label class="control-label">Monthly Payment</label>
+            <div class="input-group-prepend">
+              <div class="input-group-text">$</div>
+              <input type="text" class="form-control" placeholder="Monthly Payment" tabindex="1" id="pmt" name="mPmt" />
+            </div>
+          </div>
+        </div>
 
-                  <div id="interest-rate-group" class="col-xs-6 col-sm-4 input-spacer requisite">
-                    <label class="control-label">Interest Rate</label>
-                    <div class="input-group">
-                      <input type="number" class="form-control" id="apr" name="APR" tabindex="2" step="0.001">
-                      <div class="input-group-text">%</div>
-                    </div>
-                  </div>
-                </div>
+        <div class="form-group row">
+          <div id="loan-life-group" class="col-md-6 col-sm-4 input-spacer requisite">
+            <label class="control-label">Total Costs of Loan</label>
+            <div class="input-group-prepend">
+              <div class="input-group-text">$</div>
+              <input type="text" class="form-control" placeholder="Total Costs of Loan" tabindex="1" id="pmtTotal"
+                name="mPmtTotal" />
+            </div>
+          </div>
+        </div>
 
-                  <div class="form-group row">
-                        <div id="loan-term-group" class="col-xs-6 col-sm-4 input-spacer requisite">
-                          <label class="control-label">Loan Term</label>
-                          <div class="input-group-prepend">
-                            <div class="input-group-text">Years</div>
-                            <input type="number" class="form-control" placeholder="Term in Years" tabindex="1" id="trm" name="APR"/>
-                          </div>
-                        </div>
-                        </div>
-                  
-                
-                <div class="form-group">
-                  <div class="col-xs-12 col-sm-6 col-sm-offset-3">
-                    <button type="button" class="btn btn-primary btn-lg btn-block" name="calculate" id="calcBtn">Calculate</button>
-                  </div>
-                </div>
-
-                <!-- <h3 class="text-center">Monthly Insurance & Taxes</h4>
-                
-                <h3 class="text-center">Total Monthly Payments <br><small>Including Taxes, Insurance, and Mortgage Insurance if applicable</small></h4> 
-
-
-
-                <p class="col-xs-12 col-sm-8 col-sm-offset-2 text-center">If you would like the information presented in this calculator to keep for offline viewing, printing, or sharing, enter your email below and click <q>Send</q>.</p>  -->
-
-
-                <div class="form-group row">
-                        <div id="monthly-payment-group" class="col-xs-6 col-sm-4 input-spacer requisite">
-                          <label class="control-label">Monthly Payment</label>
-                          <div class="input-group-prepend">
-                            <div class="input-group-text">$</div>
-                            <input type="text" class="form-control" placeholder="Term in Years" tabindex="1" id="pmt" name="mPmt"/>
-                          </div>
-                        </div>
-                        </div>
-
-
-                        <div class="form-group row">
-                                <div id="loan-life-group" class="col-xs-6 col-sm-4 input-spacer requisite">
-                                  <label class="control-label">Monthly Payment</label>
-                                  <div class="input-group-prepend">
-                                    <div class="input-group-text">$</div>
-                                    <input type="text" class="form-control" placeholder="Term in Years" tabindex="1" id="pmtTotal" name="mPmtTotal"/>
-                                  </div>
-                                </div>
-                                </div>
-
-
-                                <button type="reset" class="btn btn-outline-danger">Reset</button>
-                                <!-- <input type="reset" id="rst" value="Reset Form" /> -->
-                
-                
-              </form>
-              </div>
-          </body>
-
-
-          <!-- <form action="">
-                <label>APR%: <input type="text" id="apr" name="APR"/></label>
-                <label>Loan Term: <input type="text" id="trm" name="APR"/></label>
-                <label>Loan Amount: <input type="text" id="amt" name="amt"/></lablel> 
-                <input type="text" id="pmt" name="mPmt"/> 
-                <input type="text" id="pmtTotal" name="mPmtTotal"/>
-                <input type="button" id="sbt" value="Submit" />
-                <input type="reset" id="rst" value="Reset Form" />
-              </form> -->
-
-
-    <!-- Row of columns -->
-    <!-- <div class="row bottomRow">
-      <div class="col-md-4">
-        <h2>Mortgage Calculator</h2>
-        <img src="img/sm-fatcat-logo-blue.jpg" alt="FatCat" class="img-thumbnail">
-        <p>Get started in reviewing our mortgage calculator. </p>
-        <p><a class="btn btn-secondary" href="mortgage.html" role="button">Mortgage &raquo;</a></p>
-      </div>
-      <div class="col-md-4">
-        <h2>Compound Interest</h2>
-        <img src="img/cat-piggybank.jpg" alt="Cat Piggybank" class="img-thumbnail">
-        <p>Review our compound interest calculator. </p>
-        <p><a class="btn btn-secondary" href="compound.html" role="button">Compound &raquo;</a></p>
-      </div>
-      <div class="col-md-4">
-        <h2>Annuity</h2>
-        <img src="img/fatcat-gold.jpg" alt="Mickey and Minnie Mouse" class="mMouse img-thumbnail">
-        <p>Learn more about our annuity calculator.</p>
-        <p><a class="btn btn-secondary" href="annuity.html" role="button">Annuity &raquo;</a></p>
-      </div>
-    </div> -->
-
-
+      </form>
+    </div>
   </main> <!-- /container -->
 
-
   <footer class="container">
-    <hr/>
-    <p>&copy; FatCatBank 2019 Credit to <a href="https://disneyworld.disney.go.com/">Disney</a></p>
+    <hr />
+    <p>&copy; FatCatBank 2019</p>
   </footer>
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
     integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
@@ -205,7 +148,7 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
     integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
     crossorigin="anonymous"></script>
-    <script src="js/getMortgage.js"></script>
+  <script src="js/getMortgage.js"></script>
 </body>
 
 </html>

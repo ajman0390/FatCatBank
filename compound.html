@@ -13,8 +13,8 @@
   <!-- Added CSS file-->
   <link rel="stylesheet" href="css/styles.css">
 
-  <!-- Google fonts stylesheet -->
-  <link href="https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap" rel="stylesheet">
+  <!-- Google fonts stylesheet THIS FAILS THE VALIDATOR as Google fonts inputs a pipe for multiple fonts -->
+  <link href="https://fonts.googleapis.com/css?family=PT+Serif|Playfair+Display&display=swap" rel="stylesheet">
 
   <link rel="icon" href="img/fatcat-icon.png" />
   <title>FatCatBank</title>
@@ -31,17 +31,17 @@
 
     <div class="collapse navbar-collapse" id="navbarsDefault">
       <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-                    <a class="nav-link" href="mortgage.html">Mortgage</a>
-                  </li>
-          
-                  <li class="nav-item">
-                    <a class="nav-link" href="compound.html">Compound</a>
-                  </li>
-          
-                  <li class="nav-item">
-                    <a class="nav-link" href="annuity.html">Annuity</a>
-                  </li>
+        <li class="nav-item">
+          <a class="nav-link" href="mortgage.html">Mortgage</a>
+        </li>
+
+        <li class="nav-item active">
+          <a class="nav-link" href="compound.html">Compound</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="annuity.html">Annuity</a>
+        </li>
 
       </ul>
     </div>
@@ -50,120 +50,97 @@
 
   <!-- Main jumbotron -->
   <header>
-    
-    <div class="container">
-        <div class="blog-header py-3">
-            <br/>
-        </div>
 
-    <div class="jumbotron p-4 p-md-5 text-white rounded bg-dark jumboT">
-      <div class="col-md-6 px-0">
-        <h1 class="display-4 font-italic">FatCatBank</h1>
-        <p class="lead my-3">Multiple financial planning calculators to determine with FatCatBank product best suits your needs.</p>
-        <p class="lead mb-0"><a href="#" class="text-white font-weight-bold">Continue reading...</a></p>
+    <div class="container">
+      <div class="blog-header py-3">
+        <br />
+      </div>
+
+      <div class="jumbotron p-4 p-md-5 text-white rounded bg-dark jumboT">
+        <div class="text-center">
+          <h1 class="display-4 font-italic">FatCatBank</h1>
+          <h2 class="display-5 font-weight-bold">Compound Interest Calculator</h2>
+          <p class="lead my-3 pTop">Calculator to assist in financial planning which FatCatBank product best suits your
+            needs.</p>
+          <!-- <p class="lead mb-0"><a href="#" class="text-white font-weight-bold">Continue reading...</a></p> -->
+        </div>
       </div>
     </div>
 
   </header>
 
-
-
   <main class="container">
 
-      <div class="jumbotron">
-          <h1 class="text-center display-4">JavaScript Interest Calculator</h1>
-          <hr>
-          <div class="container" id="simple-interest">
-            <h3>Simple Interest</h3>
-            <p class="lead">A=i+(prt)</p>
-            <form id="siForm">
-              <div class="form-group">
-                <label for="principalSimple">Principal</label>
-                <input type="text" class="form-control" id="principalSimple" placeholder="Enter amount without dollar sign">
-              </div>
-              <div class="form-group">
-                <label for="interestSimple">Interest Rate</label>
-                <input type="text" class="form-control" id="interestSimple" placeholder="Example: 12%">
-              </div>
-              <div class="form-group">
-                <label for="termSimple">Term of Loan</label>
-                <input type="text" class="form-control" id="termSimple" placeholder="Example: 2 (must be in terms of years)">
-              </div>
-              <button type="submit" class="btn btn-primary" id="btnSimple" onclick="simpleInterest()">Submit</button>
-            </form>
-            <div>
-              <p class="lead mt-3" id="siOutput-01"></p>
-              <p class="lead mb-3" id="siOutput-02"></p>
-            </div>
-            <div class="text-center">
-              <input class="btn btn-secondary btn-lg" type="button" value="Reset" onClick="document.getElementById('siForm').reset()">
+    <div class="jumbotron">
+      <h3 class="text-center display-4">Compound Interest Calculator</h3>
+      <br />
+      <hr />
+      <br />
+      <div class="container">
+        <h3>Compound Interest</h3>
+        <!-- <p class="lead">A=p(1+(r/n))^(nt)</p> -->
+        <p class="lead">FatCatBank offers compettive interest rates of .0025%!</p>
+        <form id="ciForm">
+          <div class="form-group">
+            <label for="principalCompound">Principal Deposit</label>
+            <div class="input-group-prepend">
+              <div class="input-group-text">$</div>
+              <input type="number" class="form-control" id="principalCompound"
+                placeholder="Enter amount without dollar sign or commas" autofocus />
             </div>
           </div>
-          <br>
-          <hr>
-          <br>
-          <div class="container" div="compound-interest ">
-            <h3>Compound Interest</h3>
-            <p class="lead">A=p(1+(r/n))^(nt)</p>
-            <form id="ciForm">
-              <div class="form-group">
-                <label for="principalCompound">Principal</label>
-                <input type="text" class="form-control" id="principalCompound" placeholder="Enter amount without dollar sign">
-              </div>
-              <div class="form-group">
-                <label for="interestCompound">Interest Rate</label>
-                <input type="text" class="form-control" id="interestCompound" placeholder="Example: 12%">
-              </div>
-              <div class="form-group">
-                <label for="timesCompounded">Times Compounded per Year</label>
-                <input type="text" class="form-control" id="timesCompounded" placeholder="Example: 4 (means compounded quarterly)">
-              </div>
-              <div class="form-group">
-                <label for="termCompound">Term of Loan</label>
-                <input type="text" class="form-control" id="termCompound" placeholder="Example: 2 (must be in terms of years)">
-              </div>
-              <button type="submit" class="btn btn-primary" id="btnCompound" onclick="compoundInterest()">Submit</button>
-            </form>
-            <div>
-              <p class="lead mt-3" id="ciOutput-01"></p>
-              <p class="lead mb-3" id="ciOutput-02"></p>
-            </div>
-            <div class="text-center">
-              <input class="btn btn-secondary btn-lg" type="button" value="Reset" onClick="document.getElementById('ciForm').reset()">
+
+          <div class="form-group">
+            <label for="interestCompound">Interest Rate</label>
+            <div class="input-group-append">
+              <input type="number" class="form-control" id="interestCompound" placeholder="Example: 12%" />
+              <div class="input-group-text">%</div>
             </div>
           </div>
-        </div>
 
-        
-    <!-- Row of columns -->
-    <div class="row bottomRow">
-      <div class="col-md-4">
-        <h2>Mortgage Calculator</h2>
-        <img src="img/sm-fatcat-logo-blue.jpg" alt="FatCat" class="img-thumbnail">
-        <p>Get started in reviewing our mortgage calculator. </p>
-        <p><a class="btn btn-secondary" href="mortgage.html" role="button">Mortgage &raquo;</a></p>
-      </div>
-      <div class="col-md-4">
-        <h2>Compound Interest</h2>
-        <img src="img/cat-piggybank.jpg" alt="Cat Piggybank" class="img-thumbnail">
-        <p>Review our compound interest calculator. </p>
-        <p><a class="btn btn-secondary" href="compound.html" role="button">Compound &raquo;</a></p>
-      </div>
-      <div class="col-md-4">
-        <h2>Annuity</h2>
-        <img src="img/fatcat-gold.jpg" alt="Mickey and Minnie Mouse" class="mMouse img-thumbnail">
-        <p>Learn more about our annuity calculator.</p>
-        <p><a class="btn btn-secondary" href="annuity.html" role="button">Annuity &raquo;</a></p>
-      </div>
-    </div>
+          <div class="form-group">
+            <label for="termCompound">Term of Loan</label>
+            <div class="input-group-append">
+              <input type="number" class="form-control" id="termCompound"
+                placeholder="Example: 2 (must be in terms of years)" />
+              <div class="input-group-text">Years</div>
+            </div>
+          </div>
 
+          <div class="text-center">
+            <button type="button" class="btn btn-outline-primary btn-lg" id="btnCompound">Calculate</button>
+            <button type="reset" class="btn btn-outline-danger btn-lg">Reset</button>
+          </div>
+
+          <div class="form-group">
+            <label class="control-label">Future Value</label>
+            <div class="input-group-prepend">
+              <div class="input-group-text">$</div>
+              <input type="text" class="form-control" placeholder="Future Value" id="ciOutput-01" />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="control-label">Total Interest Accrued</label>
+            <div class="input-group-prepend">
+              <div class="input-group-text">$</div>
+              <input type="text" class="form-control" placeholder="Total Interest Accrued" tabindex="1"
+                id="ciOutput-02" />
+            </div>
+          </div>
+
+        </form>
+
+      </div>
+    </div> <!-- /jumbotron -->
 
   </main> <!-- /container -->
 
 
   <footer class="container">
-    <hr/>
-    <p>&copy; FatCatBank 2019 Credit to <a href="https://disneyworld.disney.go.com/">Disney</a></p>
+    <hr />
+    <p>&copy; FatCatBank 2019 </p>
+    <!-- Credit to <a href="https://disneyworld.disney.go.com/">Disney</a> -->
   </footer>
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
     integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
@@ -172,6 +149,7 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
     integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
     crossorigin="anonymous"></script>
+  <script src="js/getCompound.js"></script>
 </body>
 
 </html>

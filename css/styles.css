@@ -10,3 +10,11 @@
 footer p {
     float: right;
 }
+
+h1 {
+    font-family: 'Playfair Display', serif;
+}
+
+.pTop {
+    font-family: 'PT Serif', serif;
+}
