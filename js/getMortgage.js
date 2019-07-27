@@ -1,14 +1,12 @@
 "use strict";
 
 // Anonymous init function call for the calculate btn onclick to call the getValues function
-window.onload = function()
-{
+window.onload = function () {
   document.getElementById("calcBtn").onclick = getValues;
 }
 
 // getValues function calls calculatePayment, calculateLoanAmount and Output
-function getValues()
-{
+function getValues() {
   let term = document.getElementById("trm").value;
   let apr = document.getElementById("apr").value;
   let amt = document.getElementById("amt").value;
@@ -21,15 +19,13 @@ function getValues()
 }
 
 // Calculates mothly payment, sends to getValues for output
-function calculatePayment(amt, apr, monthTerm)
-{
-	let payment = amt*(apr * Math.pow((1 + apr), monthTerm))/(Math.pow((1 + apr), monthTerm) - 1);
-	return payment;
+function calculatePayment(amt, apr, monthTerm) {
+  let payment = amt * (apr * Math.pow((1 + apr), monthTerm)) / (Math.pow((1 + apr), monthTerm) - 1);
+  return payment;
 }
 
 // Calculates total loan amount, sends to getValues for output
-function calculateLoanAmount(mPmt, monthTerm)
-{
-    let loanAmt = mPmt * monthTerm;
-    return loanAmt;
+function calculateLoanAmount(mPmt, monthTerm) {
+  let loanAmt = mPmt * monthTerm;
+  return loanAmt;
 }
