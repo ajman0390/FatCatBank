@@ -1,33 +1,22 @@
 "use strict";
-var principal = 0;
-var interestRate = 0;
-var timesCompounded = 0;
-var termOfLoan = 0;
-var amount = 0;
 
+// Anonymous init function call for the calculate btn onclick to call the caculateCompound interest calculations function
 window.onload = function()
 {
-  document.getElementById("btnCompound").onclick = calculate;
+  document.getElementById("btnCompound").onclick = calculateCompound;
 }
 
-function calculate()
+// Function's Math: A=p(1+(r/n))^(nt); n = 1 for this function
+function calculateCompound()
             {
-                var p = document.getElementById("principalCompound").value;
-                
-                var t = document.getElementById("termCompound").value; // no. of years
-                var r = document.getElementById("interestCompound").value;
-                // result = document.getElementById("result");
+                let prinComp = document.getElementById("principalCompound").value; // deposit 
+                let termComp = document.getElementById("termCompound").value; // no. of years
+                let rateComp = document.getElementById("interestCompound").value; // interest rate
 
-                // The equation is A = p * [[1 + (r/n)] ^ nt]
-                var A = (p* Math.pow((1 + (r/(1*100))), (1*t)));
+                // The equation is A = p * [[1 + (r/n)] ^ nt]; n = 1 for this function
+                let amt = (prinComp * Math.pow((1 + (rateComp/(1*100))), (1*termComp)));
 
-                // toFixed is used for rounding the amount with two decimal places.
-
-                console.log(A);
-                
-                
-
-                document.getElementById("ciOutput-01").value = A.toFixed(2);
-
-                document.getElementById("ciOutput-02").value =  (A.toFixed(2) - p).toFixed(2);
+                // toFixed is used for rounding the amount with two decimal places.           
+                document.getElementById("compOutput-01").value = amt.toFixed(2);
+                document.getElementById("compOutput-02").value =  (amt.toFixed(2) - prinComp).toFixed(2);
             }

@@ -1,39 +1,35 @@
 "use strict";
-var term;
-var apr;
-var amt;
-var mPmt;
-var monthTerm;
-var termPay;
 
-
+// Anonymous init function call for the calculate btn onclick to call the getValues function
 window.onload = function()
 {
   document.getElementById("calcBtn").onclick = getValues;
-};
-
-//use toFixed(2) to set the precision of the mPayment. Use it on an int.
-function getValues()
-{
-  term = document.getElementById("trm").value;
-  apr = document.getElementById("apr").value;
-  amt = document.getElementById("amt").value;
-  apr /= 1200;
-  monthTerm = term * 12;
-  mPmt = calculatePayment();
-  termPay = calculateLoanAmount();
-  document.getElementById("pmt").value = "$" + mPmt.toFixed(2);
-  document.getElementById("pmtTotal").value = "$" + termPay.toFixed(2);
 }
 
-function calculatePayment()
+// getValues function calls calculatePayment, calculateLoanAmount and Output
+function getValues()
 {
-	var payment = amt*(apr * Math.pow((1 + apr), monthTerm))/(Math.pow((1 + apr), monthTerm) - 1);
+  let term = document.getElementById("trm").value;
+  let apr = document.getElementById("apr").value;
+  let amt = document.getElementById("amt").value;
+  apr /= 1200;
+  let monthTerm = term * 12;
+  let mPmt = calculatePayment(amt, apr, monthTerm);
+  let termPay = calculateLoanAmount(mPmt, monthTerm);
+  document.getElementById("pmt").value = mPmt.toFixed(2); //toFixed(2) to set the precision
+  document.getElementById("pmtTotal").value = termPay.toFixed(2);
+}
+
+// Calculates mothly payment, sends to getValues for output
+function calculatePayment(amt, apr, monthTerm)
+{
+	let payment = amt*(apr * Math.pow((1 + apr), monthTerm))/(Math.pow((1 + apr), monthTerm) - 1);
 	return payment;
 }
 
-function calculateLoanAmount()
+// Calculates total loan amount, sends to getValues for output
+function calculateLoanAmount(mPmt, monthTerm)
 {
-    var loanAmt = mPmt * monthTerm;
+    let loanAmt = mPmt * monthTerm;
     return loanAmt;
 }
