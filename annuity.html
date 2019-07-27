@@ -12,9 +12,10 @@
 
   <!-- Added CSS file-->
   <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/img-border.css">
 
-  <!-- Google fonts stylesheet -->
-  <link href="https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap" rel="stylesheet">
+  <!-- Google fonts stylesheet THIS FAILS THE VALIDATOR as Google fonts inputs a pipe for multiple fonts -->
+  <link href="https://fonts.googleapis.com/css?family=PT+Serif|Playfair+Display&display=swap" rel="stylesheet">
 
   <link rel="icon" href="img/fatcat-icon.png" />
   <title>FatCatBank</title>
@@ -31,17 +32,17 @@
 
     <div class="collapse navbar-collapse" id="navbarsDefault">
       <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-                    <a class="nav-link" href="mortgage.html">Mortgage</a>
-                  </li>
-          
-                  <li class="nav-item">
-                    <a class="nav-link" href="compound.html">Compound</a>
-                  </li>
-          
-                  <li class="nav-item active">
-                    <a class="nav-link" href="annuity.html">Annuity</a>
-                  </li>
+        <li class="nav-item">
+          <a class="nav-link" href="mortgage.html">Mortgage</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="compound.html">Compound</a>
+        </li>
+
+        <li class="nav-item active">
+          <a class="nav-link" href="annuity.html">Annuity</a>
+        </li>
 
       </ul>
     </div>
@@ -50,64 +51,56 @@
 
   <!-- Main jumbotron -->
   <header>
-    
-    <div class="container">
-        <div class="blog-header py-3">
-            <br/>
-        </div>
 
-    <div class="jumbotron p-4 p-md-5 text-white rounded bg-dark jumboT">
-      <div class="text-center">
-        <h1 class="display-4 font-italic">FatCatBank</h1>
-        <p class="lead my-3">Multiple financial planning calculators to determine with FatCatBank product best suits your needs.</p>
+    <div class="container">
+      <div class="py-3"><br /></div>
+      <div class="jumbotron p-4 p-md-5 text-white rounded bg-dark jumboT">
+        <div class="text-center">
+          <h1 class="display-4 font-italic">FatCatBank</h1>
+          <p class="lead my-3 pTop">Multiple financial planning calculators to determine with FatCatBank product best suits
+            your needs.</p>
+        </div>
       </div>
     </div>
 
   </header>
 
 
-
   <main class="container text-center">
 
+    <!-- Coming Soon message -->
     <h2>Coming Soon!</h2>
-    <p>Dana advised to advise of new features comming soon</p>
-    <div class="d-flex justify-content-center">
-    <div class="col-md-4">
-        <img src="img/sadcat.jpg" alt="Sad Cat" class="sadcat-img-thumbnail">
-        
-      </div>
-    </div>
-    <br/>
-        <hr/>
+    <img src="img/sm-cat-film.jpg" alt="Film Cat" class="img-thumbnail noneImgBorder">
+    <p>Dana advised to promote new features coming soon, perhaps another calculator!</p>
+    <hr />
 
     <!-- Row of columns -->
-    <div class="row bottomRow">
+    <aside class="row bottomRow">
       <div class="col-md-4">
-        <h2>Mortgage Calculator</h2>
-        <img src="img/sm-mortgage.jpg" alt="Mortgage" class="img-thumbnail">
-        <p>Get started in reviewing our mortgage calculator. </p>
+        <h3>Mortgage Calculator</h3>
+        <img src="img/sm-mortgage.jpg" alt="Mortgage" class="img-thumbnail noneImgBorder">
+        <p class="pTop">Get started in reviewing our mortgage calculator. </p>
         <p><a class="btn btn-secondary" href="mortgage.html" role="button">Mortgage &raquo;</a></p>
       </div>
       <div class="col-md-4">
         <h2>Compound Interest</h2>
-        <img src="img/cat-piggybank.jpg" alt="Cat Piggybank" class="img-thumbnail">
-        <p>Review our compound interest calculator. </p>
+        <img src="img/sm-cat-piggybank.jpg" alt="Cat Piggybank" class="img-thumbnail noneImgBorder">
+        <p class="pTop">Review our compound interest calculator. </p>
         <p><a class="btn btn-secondary" href="compound.html" role="button">Compound &raquo;</a></p>
       </div>
       <div class="col-md-4">
         <h2>Annuity</h2>
-        <img src="img/sm-fatcat-gold.jpg" alt="Fat Cat with Gold" class="img-thumbnail">
-        <p>Learn more about our annuity calculator.</p>
+        <img src="img/sm-fatcat-gold.jpg" alt="Fat Cat with Gold" class="img-thumbnail noneImgBorder">
+        <p class="pTop">Learn more about our annuity calculator.</p>
         <p><a class="btn btn-secondary" href="annuity.html" role="button">Annuity &raquo;</a></p>
       </div>
-    </div>
-
+    </aside>
 
   </main> <!-- /container -->
 
 
   <footer class="container">
-    <hr/>
+    <hr />
     <p>&copy; FatCatBank 2019</p>
   </footer>
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"

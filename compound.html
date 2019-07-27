@@ -31,6 +31,7 @@
 
     <div class="collapse navbar-collapse" id="navbarsDefault">
       <ul class="navbar-nav ml-auto">
+
         <li class="nav-item">
           <a class="nav-link" href="mortgage.html">Mortgage</a>
         </li>
@@ -52,17 +53,13 @@
   <header>
 
     <div class="container">
-      <div class="blog-header py-3">
-        <br />
-      </div>
-
+      <div class="py-3"><br /></div>
       <div class="jumbotron p-4 p-md-5 text-white rounded bg-dark jumboT">
         <div class="text-center">
           <h1 class="display-4 font-italic">FatCatBank</h1>
           <h2 class="display-5 font-weight-bold">Compound Interest Calculator</h2>
           <p class="lead my-3 pTop">Calculator to assist in financial planning which FatCatBank product best suits your
             needs.</p>
-          <!-- <p class="lead mb-0"><a href="#" class="text-white font-weight-bold">Continue reading...</a></p> -->
         </div>
       </div>
     </div>
@@ -78,9 +75,13 @@
       <br />
       <div class="container">
         <h3>Compound Interest</h3>
-        <!-- <p class="lead">A=p(1+(r/n))^(nt)</p> -->
-        <p class="lead">FatCatBank offers compettive interest rates of .0025%!</p>
+        <!-- Function's Math: A=p(1+(r/n))^(nt) -->
+        <p class="lead">FatCatBank offers competitive savings account interest rates of .0025%!</p>
+
+        <!-- Start of Form -->
         <form id="ciForm">
+
+          <!-- Principal Deposit input -->
           <div class="form-group">
             <label for="principalCompound">Principal Deposit</label>
             <div class="input-group-prepend">
@@ -90,6 +91,7 @@
             </div>
           </div>
 
+          <!-- Interest Rate input -->
           <div class="form-group">
             <label for="interestCompound">Interest Rate</label>
             <div class="input-group-append">
@@ -98,8 +100,9 @@
             </div>
           </div>
 
+          <!-- Term of Account input in years -->
           <div class="form-group">
-            <label for="termCompound">Term of Loan</label>
+            <label for="termCompound">Term of Account</label>
             <div class="input-group-append">
               <input type="number" class="form-control" id="termCompound"
                 placeholder="Example: 2 (must be in terms of years)" />
@@ -107,25 +110,28 @@
             </div>
           </div>
 
+          <!-- Form Calculate and Reset Btns -->
           <div class="text-center">
             <button type="button" class="btn btn-outline-primary btn-lg" id="btnCompound">Calculate</button>
             <button type="reset" class="btn btn-outline-danger btn-lg">Reset</button>
           </div>
 
+          <!-- Future Value of Account input -->
           <div class="form-group">
             <label class="control-label">Future Value</label>
             <div class="input-group-prepend">
               <div class="input-group-text">$</div>
-              <input type="text" class="form-control" placeholder="Future Value" id="ciOutput-01" />
+              <input type="number" class="form-control" placeholder="Future Value" id="compOutput-01" />
             </div>
           </div>
 
+          <!-- Future Value of Loan input -->
           <div class="form-group">
             <label class="control-label">Total Interest Accrued</label>
             <div class="input-group-prepend">
               <div class="input-group-text">$</div>
-              <input type="text" class="form-control" placeholder="Total Interest Accrued" tabindex="1"
-                id="ciOutput-02" />
+              <input type="number" class="form-control" placeholder="Total Interest Accrued" tabindex="1"
+                id="compOutput-02" />
             </div>
           </div>
 

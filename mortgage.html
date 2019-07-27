@@ -31,6 +31,7 @@
 
     <div class="collapse navbar-collapse" id="navbarsDefault">
       <ul class="navbar-nav ml-auto">
+
         <li class="nav-item active">
           <a class="nav-link" href="mortgage.html">Mortgage</a>
         </li>
@@ -52,15 +53,13 @@
   <header>
 
     <div class="container">
-      <div class="blog-header py-3">
-        <br />
-      </div>
-
+      <div class="py-3"><br /></div>
       <div class="jumbotron p-4 p-md-5 text-white rounded bg-dark jumboT">
         <div class="text-center">
           <h1 class="display-4 font-italic">FatCatBank</h1>
           <h2 class="display-5 font-weight-bold">Mortgage Calculator</h2>
-          <p class="lead my-3 pTop">Financial planning mortgage calculator to determine which FatCatBank product best suits
+          <p class="lead my-3 pTop">Financial planning mortgage calculator to determine which FatCatBank product best
+            suits
             your needs.</p>
         </div>
       </div>
@@ -70,23 +69,30 @@
 
   <main class="container d-flex justify-content-center">
 
-    <div class="row">
+    <section class="row">
+
+      <!-- Start of Form -->
       <form class="form-horizontal well" id="mortgage-calculator" method="GET">
+
+        <!-- Message at top of Form -->
         <h3>Mortgage Calculator</h3>
         <div class="col-xs-12 text-center">
           <p>Enter the <i>house price</i>, <i>interest rate</i>, and <i>length of the loan</i> to see how much your
             monthly mortgage payment will be:</p>
         </div>
+
+        <!-- Home Price input -->
         <div class="form-group row">
           <div id="house-price-group" class="col-md-6 col-sm-4 input-spacer requisite">
             <label class="control-label">House Price</label>
             <div class="input-group-prepend">
               <div class="input-group-text">$</div>
-              <input type="number" class="form-control" placeholder="Amount" tabindex="1" id="amt" name="amt" />
+              <input type="number" class="form-control" placeholder="Amount" tabindex="1" id="amt" name="amt" autofocus/>
             </div>
             <small id="homeHelp" class="form-text text-muted">Enter the home price without commas.</small>
           </div>
 
+          <!-- Interest Rate input -->
           <div id="interest-rate-group" class="col-xs-6 col-sm-4 input-spacer requisite">
             <label class="control-label">Interest Rate</label>
             <div class="input-group">
@@ -97,45 +103,49 @@
           </div>
         </div>
 
+        <!-- Loan Term input in years -->
         <div class="form-group row">
           <div id="loan-term-group" class="col-md-6 col-sm-4 input-spacer requisite">
             <label class="control-label">Loan Term</label>
             <div class="input-group-prepend">
               <div class="input-group-text">Years</div>
-              <input type="number" class="form-control" placeholder="Term in Years" tabindex="1" id="trm" name="APR" />
+              <input type="number" class="form-control" placeholder="Term in Years" tabindex="1" id="trm" name="APR"/>
             </div>
           </div>
         </div>
 
+        <!-- Form Calculate and Reset Btns -->
         <div class="text-center">
           <button type="button" class="btn btn-outline-primary btn-lg" name="calculate" id="calcBtn">Calculate</button>
           <button type="reset" class="btn btn-outline-danger btn-lg">Reset</button>
         </div>
 
+        <!-- Monthly Payments output -->
         <div class="form-group row">
           <div id="monthly-payment-group" class="col-md-6 col-sm-4 input-spacer requisite">
             <label class="control-label">Monthly Payment</label>
             <div class="input-group-prepend">
               <div class="input-group-text">$</div>
-              <input type="text" class="form-control" placeholder="Monthly Payment" tabindex="1" id="pmt" name="mPmt" />
+              <input type="number" class="form-control" placeholder="Monthly Payment" tabindex="1" id="pmt" name="mPmt" />
             </div>
           </div>
         </div>
 
+        <!-- Total Loan Costs output -->
         <div class="form-group row">
           <div id="loan-life-group" class="col-md-6 col-sm-4 input-spacer requisite">
             <label class="control-label">Total Costs of Loan</label>
             <div class="input-group-prepend">
               <div class="input-group-text">$</div>
-              <input type="text" class="form-control" placeholder="Total Costs of Loan" tabindex="1" id="pmtTotal"
+              <input type="number" class="form-control" placeholder="Total Costs of Loan" tabindex="1" id="pmtTotal"
                 name="mPmtTotal" />
             </div>
           </div>
         </div>
 
-      </form>
-    </div>
-  </main> <!-- /container -->
+      </form> <!-- End of Form -->
+    </section> <!-- /section -->
+  </main>
 
   <footer class="container">
     <hr />
