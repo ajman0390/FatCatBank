@@ -3,6 +3,7 @@
 // Anonymous init function call for the calculate btn onclick to call the doCalculate function
 window.onload = function () {
   document.getElementById("calcBtn").onclick = doCalculate;
+  document.getElementById("resetBtn").onclick = doReset; 
 }
 
 /*
@@ -11,8 +12,11 @@ window.onload = function () {
 */
 function doCalculate() {
   let term = document.getElementById("trm").value;
+  validateForm(term); // calls validateForm to check for positive values 
   let apr = document.getElementById("apr").value;
+  validateForm(apr);
   let amt = document.getElementById("amt").value;
+  validateForm(amt);
   apr /= 1200;
   let monthTerm = term * 12;
   let mPmt = calculatePayment(amt, apr, monthTerm);
@@ -46,4 +50,24 @@ function calculatePayment(amt, apr, monthTerm) {
 function calculateLoanAmount(mPmt, monthTerm) {
   let loanAmt = mPmt * monthTerm;
   return loanAmt;
+}
+
+/*
+* This funciton checks the inputs to ensure positive values were entered  
+* 
+* @param inputCheck (Number) - The value to be checked
+*
+*/
+function validateForm(inputCheck) {
+  if ((isNaN(inputCheck)) || (inputCheck < 0)) {
+    document.getElementById("bottomP").innerHTML = "The input was not correct. Please input valid positive numbers";
+  } 
+}
+
+/*
+* This funciton removes input error message   
+*
+*/
+function doReset() {
+  document.getElementById("bottomP").innerHTML = "";
 }
