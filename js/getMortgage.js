@@ -26,22 +26,6 @@ function doCalculate() {
 }
 
 /*
-* This funciton checks the inputs to ensure positive values were entered  
-* 
-* @param inputCheck (Number) - The value to be checked
-*
-*/
-function validateForm(inputCheck) {
-  if ((isNaN(inputCheck)) || (inputCheck < 0)) {
-    document.getElementById("bottomP").innerHTML = "The input was not correct. Please input valid positive numbers";
-  } 
-}
-
-function doReset() {
-  document.getElementById("bottomP").innerHTML = "";
-}
-
-/*
 * This funciton calculates the monthly payment of the mortgage  
 * 
 * @param amt (Number) - The home price amount
@@ -66,4 +50,24 @@ function calculatePayment(amt, apr, monthTerm) {
 function calculateLoanAmount(mPmt, monthTerm) {
   let loanAmt = mPmt * monthTerm;
   return loanAmt;
+}
+
+/*
+* This funciton checks the inputs to ensure positive values were entered  
+* 
+* @param inputCheck (Number) - The value to be checked
+*
+*/
+function validateForm(inputCheck) {
+  if ((isNaN(inputCheck)) || (inputCheck < 0)) {
+    document.getElementById("bottomP").innerHTML = "The input was not correct. Please input valid positive numbers";
+  } 
+}
+
+/*
+* This funciton removes input error message   
+*
+*/
+function doReset() {
+  document.getElementById("bottomP").innerHTML = "";
 }
