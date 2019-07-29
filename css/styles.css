@@ -18,3 +18,8 @@ h1 {
 .pTop {
     font-family: 'PT Serif', serif;
 }
+
+#topText {
+    font-style: italic;
+}
+

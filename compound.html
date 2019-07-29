@@ -69,8 +69,7 @@
   <main class="container">
 
     <section class="jumbotron">
-      <h3 class="text-center display-4">Compound Interest Calculator</h3>
-      <br />
+      <h3 class="text-center display-4">Compound Interest Calculator</h3><br />
       <hr />
       <div class="container">
         <h3>Compound Interest</h3>
@@ -78,14 +77,14 @@
         <p class="lead">FatCatBank offers competitive savings account interest rates of .0025%!</p>
 
         <!-- Start of Form -->
-        <form id="ciForm">
+        <form id="ciForm" method="GET" action="#">
 
           <!-- Principal Deposit input -->
           <div class="form-group">
             <label for="principalCompound">Principal Deposit</label>
             <div class="input-group-prepend">
               <div class="input-group-text">$</div>
-              <input type="number" class="form-control" id="principalCompound"
+              <input type="number" class="form-control" id="principalCompound" name="principalCompound"
                 placeholder="Enter amount without dollar sign or commas" autofocus />
             </div>
           </div>
@@ -94,7 +93,7 @@
           <div class="form-group">
             <label for="interestCompound">Interest Rate</label>
             <div class="input-group-append">
-              <input type="number" class="form-control" id="interestCompound" placeholder="Example: 12%" />
+              <input type="number" class="form-control" id="interestCompound" name="interestCompound" placeholder="Example: 12%" />
               <div class="input-group-text">%</div>
             </div>
           </div>
@@ -103,7 +102,7 @@
           <div class="form-group">
             <label for="termCompound">Term of Account</label>
             <div class="input-group-append">
-              <input type="number" class="form-control" id="termCompound"
+              <input type="number" class="form-control" name="termCompound" id="termCompound"
                 placeholder="Example: 2 (must be in terms of years)" />
               <div class="input-group-text">Years</div>
             </div>
@@ -117,20 +116,20 @@
 
           <!-- Future Value of Account input -->
           <div class="form-group">
-            <label class="control-label">Future Value</label>
+            <label for="compOutput-01" class="control-label">Future Value</label>
             <div class="input-group-prepend">
               <div class="input-group-text">$</div>
-              <input type="number" class="form-control" placeholder="Future Value" id="compOutput-01" />
+              <input type="number" class="form-control" placeholder="Future Value"  name="compOutput-01" id="compOutput-01" />
             </div>
           </div>
 
           <!-- Future Value of Loan input -->
           <div class="form-group">
-            <label class="control-label">Total Interest Accrued</label>
+            <label for="compOutput-02" class="control-label">Total Interest Accrued</label>
             <div class="input-group-prepend">
               <div class="input-group-text">$</div>
               <input type="number" class="form-control" placeholder="Total Interest Accrued" tabindex="1"
-                id="compOutput-02" />
+                name="compOutput-02" id="compOutput-02" />
             </div>
           </div>
 
