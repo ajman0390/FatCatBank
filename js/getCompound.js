@@ -5,7 +5,11 @@ window.onload = function () {
   document.getElementById("btnCompound").onclick = calculateCompound;
 }
 
-// Function's Math: A=p(1+(r/n))^(nt); n = 1 for this function
+/*
+* This funciton calculates the future value of a on-time 
+* deposit assuming compounded interest
+* Function's Math: A=p(1+(r/n))^(nt); n = 1 for this function
+*/
 function calculateCompound() {
   let prinComp = document.getElementById("principalCompound").value; // deposit 
   let termComp = document.getElementById("termCompound").value; // no. of years

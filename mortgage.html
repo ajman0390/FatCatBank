@@ -72,31 +72,32 @@
     <section class="row">
 
       <!-- Start of Form -->
-      <form class="form-horizontal well" id="mortgage-calculator" method="GET">
+      <form class="form-horizontal well" id="mortgage-calculator" method="GET" action="#">
 
         <!-- Message at top of Form -->
         <h3>Mortgage Calculator</h3>
         <div class="col-xs-12 text-center">
-          <p>Enter the <i>house price</i>, <i>interest rate</i>, and <i>length of the loan</i> to see how much your
+          <p>Enter the <span id="topText">house price, interest rate, and length of the loan</span> to see how much your
             monthly mortgage payment will be:</p>
         </div>
 
         <!-- Home Price input -->
         <div class="form-group row">
           <div id="house-price-group" class="col-md-6 col-sm-4 input-spacer requisite">
-            <label class="control-label">House Price</label>
+            <label for="amt" class="control-label">House Price</label>
             <div class="input-group-prepend">
               <div class="input-group-text">$</div>
-              <input type="number" class="form-control" placeholder="Amount" tabindex="1" id="amt" name="amt" autofocus/>
+              <input type="number" class="form-control" placeholder="Amount" tabindex="1" id="amt" name="amt" min="0"
+                autofocus />
             </div>
             <small id="homeHelp" class="form-text text-muted">Enter the home price without commas.</small>
           </div>
 
           <!-- Interest Rate input -->
           <div id="interest-rate-group" class="col-xs-6 col-sm-4 input-spacer requisite">
-            <label class="control-label">Interest Rate</label>
+            <label for="apr" class="control-label">Interest Rate</label>
             <div class="input-group">
-              <input type="number" class="form-control" id="apr" name="APR" tabindex="2" step="0.001"
+              <input type="number" class="form-control" id="apr" name="apr" tabindex="2" step="0.001" min="0"
                 placeholder="Interest Rate">
               <div class="input-group-text">%</div>
             </div>
@@ -106,10 +107,10 @@
         <!-- Loan Term input in years -->
         <div class="form-group row">
           <div id="loan-term-group" class="col-md-6 col-sm-4 input-spacer requisite">
-            <label class="control-label">Loan Term</label>
+            <label for="trm" class="control-label">Loan Term</label>
             <div class="input-group-prepend">
               <div class="input-group-text">Years</div>
-              <input type="number" class="form-control" placeholder="Term in Years" tabindex="1" id="trm" name="APR"/>
+              <input type="number" class="form-control" placeholder="Term in Years" tabindex="1" id="trm" name="trm" min="0"/>
             </div>
           </div>
         </div>
@@ -123,10 +124,11 @@
         <!-- Monthly Payments output -->
         <div class="form-group row">
           <div id="monthly-payment-group" class="col-md-6 col-sm-4 input-spacer requisite">
-            <label class="control-label">Monthly Payment</label>
+            <label for="mPmt" class="control-label">Monthly Payment</label>
             <div class="input-group-prepend">
               <div class="input-group-text">$</div>
-              <input type="number" class="form-control" placeholder="Monthly Payment" tabindex="1" id="pmt" name="mPmt" />
+              <input type="number" class="form-control" placeholder="Monthly Payment" tabindex="1" id="pmt" min="0"
+                name="mPmt" />
             </div>
           </div>
         </div>
@@ -134,10 +136,10 @@
         <!-- Total Loan Costs output -->
         <div class="form-group row">
           <div id="loan-life-group" class="col-md-6 col-sm-4 input-spacer requisite">
-            <label class="control-label">Total Costs of Loan</label>
+            <label for="mPmtTotal" class="control-label">Total Costs of Loan</label>
             <div class="input-group-prepend">
               <div class="input-group-text">$</div>
-              <input type="number" class="form-control" placeholder="Total Costs of Loan" tabindex="1" id="pmtTotal"
+              <input type="number" class="form-control" placeholder="Total Costs of Loan" tabindex="1" id="pmtTotal" min="0"
                 name="mPmtTotal" />
             </div>
           </div>
@@ -145,7 +147,7 @@
 
       </form> <!-- End of Form -->
     </section> <!-- /section -->
-    
+
   </main>
 
   <footer class="container">
